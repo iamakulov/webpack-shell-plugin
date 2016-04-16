@@ -58,7 +58,7 @@ export default class WebpackShellPlugin {
       }
     });
 
-    compiler.plugin('emit', (compilation, callback) => {
+    compiler.plugin('after-emit', (compilation, callback) => {
       if (this.options.onBuildEnd.length) {
         console.log('Executing post-build scripts');
         this.options.onBuildEnd.forEach((script) => {
